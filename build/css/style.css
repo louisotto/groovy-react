@@ -8,6 +8,10 @@
   font-style: normal;
   src: url("./fonts/moderna.ttf");
 }
+footer {
+  clear: both;
+  text-align: center;
+}
 header {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -17,7 +21,6 @@ header .groovy-title {
   width: 40%;
 }
 header .groovy-title h1 {
-  font-size: 6em;
   text-align: center;
   -webkit-transform: rotate(-15deg);
           transform: rotate(-15deg);
@@ -45,6 +48,15 @@ h1,
 h2,
 h3 {
   font-family: Thirsty;
+}
+h1 {
+  font-size: 6rem;
+}
+h2 {
+  font-size: 3rem;
+}
+h3 {
+  font-size: 2rem;
 }
 p,
 span {

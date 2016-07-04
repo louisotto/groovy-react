@@ -33,6 +33,7 @@ var App = React.createClass({
                 <Header version={Version} />
                 <GroovyInputs linkState={this.linkState} tags={this.state.tags} />
                 <GroovyOutputs tags={this.state.tags}/>
+                <Footer/>
             </div>
         )
     }
@@ -202,7 +203,7 @@ var GroovyOutputs = React.createClass({
                         : null
                     }
 
-                    <span className="meta">&lt;meta</span> <span className="property">name</span>="viewport" <span className="property">content=</span>"width=device-width, initial-scale=1, maximum-scale=1"&gt;
+                    <span className="meta">&lt;meta</span> <span className="property">name</span>="viewport" <span className="property">content=</span>"width=device-width, initial-scale=1"&gt;
                     <br />
 
                     <span className="meta">&lt;meta</span> <span className="property">name</span>="keywords" <span className="property">content=</span>"{tags.keywords}" <span className="meta">&gt;</span>
@@ -269,6 +270,22 @@ var GroovyOutputs = React.createClass({
                     
                 </section>
             </div>    
+        )
+    }
+})
+
+var Footer = React.createClass({
+
+    render : function() {
+        return (
+
+            <footer>
+                <div className="icons">
+                    <a className="tweet" href="https://twitter.com/home?status=HTML%20meta%20data%20made%20easy%20thanks%20to%20GroovyMeta!%20http://www.groovymeta.com%20@louisotto">Share on Twitter</a>
+                    <a className="facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://www.groovymeta.com">Share on Facebook</a>
+                </div>
+                <p>Built by <a href="https://wingtip.solutions">Louis Otto</a></p>
+            </footer>
         )
     }
 })
