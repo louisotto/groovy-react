@@ -1,0 +1,61 @@
+@font-face {
+  font-family: Thirsty;
+  font-style: normal;
+  src: url("./fonts/thirstysoftblack-webfont.woff");
+}
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+header .groovy-title {
+  width: 40%;
+}
+header .groovy-title h1 {
+  font-size: 6em;
+  text-align: center;
+  -webkit-transform: rotate(-15deg);
+          transform: rotate(-15deg);
+  line-height: 1;
+}
+header .groovy-title h1 span {
+  display: block;
+  font-size: 1.8rem;
+}
+header .groovy-desc {
+  -ms-flex-item-align: center;
+      align-self: center;
+  padding: 5%;
+}
+header .groovy-desc p {
+  font-family: Sans-serif;
+}
+input,
+textarea,
+span.helper {
+  display: block;
+  width: 100%;
+}
+span.helper {
+  margin-bottom: 1em;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+main {
+  box-sizing: border-box;
+}
+main .groovy-inputs,
+main .groovy-outputs {
+  width: 50%;
+  float: left;
+  padding: 1em;
+  box-sizing: border-box;
+}
+main h1,
+main h2,
+main h3 {
+  font-family: Thirsty;
+}

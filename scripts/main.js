@@ -29,8 +29,7 @@ var App = React.createClass({
         var Version = "2.0";
         return (
             <div className="groovy-meta">
-                <Header tagline="Groovy Meta Generator" version={Version} />
-                <Introduction />
+                <Header version={Version} />
                 <GroovyInputs linkState={this.linkState} tags={this.state.tags} />
                 <GroovyOutputs tags={this.state.tags} />
             </div>
@@ -47,23 +46,13 @@ var Header = React.createClass({
 
         return(
             <header>
-                <h1>{this.props.tagline}</h1>
-                <span>v{this.props.version}</span>
+                <div className="groovy-title">
+                    <h1>Groovy<span>Meta</span>Generator<span>v{this.props.version}</span></h1>
+                </div>
+                <div className="groovy-desc">
+                    <p>I built this tool purely to speed up creation of HTML metadata for websites, as well as those pesky social tags. It's already configured for best-practises from Facebook, Google and Twitter and when you're done all you need to do is copy-paste. It's your one-stop-meta-tag-shop. Oh, and it's free!</p>
+                </div>
             </header>            
-        )
-    }
-})
-
-// Introduction
-
-var Introduction = React.createClass({
-
-    render : function() {
-
-        return(
-            <article>
-                <p>I built this tool purely to speed up creation of HTML metadata for websites, as well as those pesky social tags. It's already configured for best-practises from Facebook, Google and Twitter and when you're done all you need to do is copy-paste. It's your one-stop-meta-tag-shop. Oh, and it's free!</p>
-            </article>            
         )
     }
 })
@@ -162,7 +151,10 @@ var GroovyOutputs = React.createClass({
         var tags = this.props.tags;
 
         return(
-            <p>{tags.name}</p>    
+            <div className="groovy-outputs">
+                <p>{tags.title}</p>
+                <p>test</p>
+            </div>    
         )
     }
 })
