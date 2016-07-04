@@ -3,6 +3,11 @@
   font-style: normal;
   src: url("./fonts/thirstysoftblack-webfont.woff");
 }
+@font-face {
+  font-family: Moderna;
+  font-style: normal;
+  src: url("./fonts/moderna.ttf");
+}
 header {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -27,9 +32,6 @@ header .groovy-desc {
       align-self: center;
   padding: 5%;
 }
-header .groovy-desc p {
-  font-family: Sans-serif;
-}
 input,
 textarea,
 span.helper {
@@ -38,6 +40,24 @@ span.helper {
 }
 span.helper {
   margin-bottom: 1em;
+}
+h1,
+h2,
+h3 {
+  font-family: Thirsty;
+}
+p,
+span {
+  font-family: Moderna;
+}
+span.helper {
+  font-size: 0.8em;
+}
+.code {
+  font-family: Consolas;
+}
+.code span {
+  font-family: Consolas;
 }
 html,
 body {
@@ -53,9 +73,4 @@ main .groovy-outputs {
   float: left;
   padding: 1em;
   box-sizing: border-box;
-}
-main h1,
-main h2,
-main h3 {
-  font-family: Thirsty;
 }

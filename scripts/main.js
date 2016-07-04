@@ -18,6 +18,7 @@ var App = React.createClass({
     getInitialState : function() {
     return {
       tags: {
+        canonical: "",
         fb: false,
         twitter: false,
         googlePlus: false
@@ -31,7 +32,7 @@ var App = React.createClass({
             <div className="groovy-meta">
                 <Header version={Version} />
                 <GroovyInputs linkState={this.linkState} tags={this.state.tags} />
-                <GroovyOutputs tags={this.state.tags} />
+                <GroovyOutputs tags={this.state.tags}/>
             </div>
         )
     }
@@ -61,33 +62,9 @@ var Header = React.createClass({
 
 var GroovyInputs = React.createClass({
 
-    checkFb : function() {
-        var fb = this.props.tags.fb;
-            if (fb === false) {
-                FaceBook = <FaceBook linkState={this.props.linkState}/>;
-
-                // ToDo : Hide checkbox
-            }
-    },
-    checkTwitter : function() {
-        var twitter = this.props.tags.twitter;
-            if (fb === false) {
-                Twitter = <Twitter/>;
-
-                // ToDo : Hide checkbox
-            }
-    },
-    checkGoogle : function() {
-        var google = this.props.tags.googlePlus;
-            if (fb === false) {
-                GooglePlus = <GooglePlus/>;
-
-                // ToDo : Hide checkbox
-            }
-    },
-
     render : function() {
         var linkState = this.props.linkState;
+        var tags = this.props.tags;
 
         return(
             <div className="groovy-inputs">
@@ -107,40 +84,95 @@ var GroovyInputs = React.createClass({
                 <textarea valueLink={linkState('tags.desc')} placeholder="A short description of your site (max recommended 200 chars)"/>
                 <span className="helper">It's important to give your site a good description. This will be displayed in search engine results, as well as Social sharing.</span>
                 
-                <input type="checkbox" checkedLink={linkState('tags.fb')} onClick={this.checkFb} placeholder="Website Name"/>
+                <input type="checkbox" checkedLink={linkState('tags.fb')}/>
                 <span className="helper">Facebook</span>
 
-                <input type="checkbox" checkedLink={linkState('tags.twitter')} placeholder="Website Name"/>
+                <input type="checkbox" checkedLink={linkState('tags.twitter')}/>
                 <span className="helper">Twitter</span>
 
-                <input type="checkbox" checkedLink={linkState('tags.googlePlus')} placeholder="Website Name"/>
+                <input type="checkbox" checkedLink={linkState('tags.googlePlus')}/>
                 <span className="helper">Google+</span>
 
                 <h2>Let's get Social!</h2>
                 <p>Groovy Meta supports major social platforms, simply check the ones you want to include tags for and fill them in.</p>
 
-                {FaceBook}
+                {tags.fb == true ?
+
+                    <div>
+
+                        <h3>Facebook</h3>
+
+                        <p>A lot of content is shared via Facebook, so filling out these fields will ensure your page looks great when people share a link to your home page on Facebook. <a href="https://developers.facebook.com/docs/sharing/best-practices" target="_blank">Read more about Facebook's best sharing practises here.</a></p>
+
+                        <input type="text" valueLink={linkState('tags.socialTitle')} placeholder="The title of your article, excluding any branding."/>
+                        <span className="helper">The title of your article, excluding any branding. Don't use your website name. Think of a catchy headline.</span>
+                    
+                        <input type="text" valueLink={linkState('tags.socialName')} placeholder="The name of your website, not the URL."/>
+                        <span className="helper">The name of your website. Not the URL, but the name. (i.e. "Google" not "google.com".)</span>
+
+                        <input type="text" valueLink={linkState('tags.socialImage')} placeholder="A link to an image you want displayed when your page is shared."/>
+                        <span className="helper">This is an image associated with your media. We suggest that you use an image of at least 1200x630 pixels.</span>
+
+                        <input type="text" valueLink={linkState('tags.socialLocale')} placeholder="Your locale. Use en_US if unsure."/>
+                        <span className="helper">The locale of the resource. The default is en_US. Format is ll_cc where "ll" is language and "cc" is Country.</span>
+
+                        <input type="text" valueLink={linkState('tags.FacebookAppID')} placeholder=""/>
+                        <span className="helper">(Optional) The unique ID that lets Facebook know the identity of your site. This is crucial for Facebook Insights to work properly. See <a href="https://developers.facebook.com/docs/insights" target="_blank">Facebooks Insights Documentation</a> for more details.</span>
+
+                    </div>
+
+                : null
+                }
+
+                {tags.twitter == true ?
+
+                    <div>
+
+                        <h3>Twitter</h3>
+
+                        <p>Twitter offer 'Summary cards' to enable better sharing of content. Please fill out the tags if you want your link to look great in Twitter shares. When live on your site, you need to <a href="https://dev.twitter.com/docs/cards/validation/validator" target="_blank">register your Summary Card with Twitter.</a></p>
+                        
+                        <input type="text" valueLink={linkState('tags.twitterSite')} placeholder="Your Twitter username (include the @)"/>
+                        <span className="helper">The Twitter @username the card should be attributed to. <a href="https://dev.twitter.com/cards/analytics" target="_blank">Required for Twitter Card analytics.</a></span>
+
+                        <input type="text" valueLink={linkState('tags.twitterTitle')} placeholder="The title of your article, excluding any branding."/>
+                        <span className="helper">A concise title for the related content.</span>
+                    
+                        <input type="text" valueLink={linkState('tags.twitterDescription')} placeholder="Your card's description"/>
+                        <span className="helper">A description that concisely summarizes the content as appropriate for presentation within a Tweet. You should not re-use the title as the description or use this field to describe the general services provided by the website. </span>
+
+                        <input type="text" valueLink={linkState('tags.twitterImage')} placeholder="A link to an image you want displayed when your page is shared."/>
+                        <span className="helper">The image must be a minimum size of 120px by 120px and must be less than 1MB in file size. The image will be cropped to a square on all platforms.</span>
+
+                        <input type="text" valueLink={linkState('tags.twitterImageAlt')} placeholder="Your image's alt attribute."/>
+                        <span className="helper">A text description of the image conveying the essential nature of an image to users who are visually impaired. </span>
+
+                    </div>
+
+                : null
+                }
+
+                {tags.googlePlus == true ?
+
+                    <div>
+
+                        <h3>Google+</h3>
+
+                        <input type="text" valueLink={linkState('tags.googlePlusProfile')} placeholder="Your Google+ Profile link"/>
+                        <span className="helper">The URL for your Google+ personal profile page.</span>
+
+                        <input type="text" valueLink={linkState('tags.googlePlusPageProfile')} placeholder="Your Google+ Page Profile link"/>
+                        <span className="helper">(Optional) This should be the URL of your Google+ Business page. Not a personal profile page as above.</span>
+                    
+                    </div>
+
+                : null
+                }
 
             </div>    
         )
     }
 })
-
-// FaceBook
-
-var FaceBook = React.createClass({
-
-    render : function() {
-        var linkState = this.props.linkState;
-        return(
-            <div>
-                <input type="text" valueLink={linkState('tags.socialTitle')} placeholder="The title of your article, excluding any branding."/>
-                <span className="helper">The title of your article, excluding any branding. Don't use your website name. Think of a catchy headline.</span>
-            </div>
-        )
-    }
-})
-
 
 // GroovyOutputs
 
@@ -152,8 +184,90 @@ var GroovyOutputs = React.createClass({
 
         return(
             <div className="groovy-outputs">
-                <p>{tags.title}</p>
-                <p>test</p>
+                <h2>Your Meta Tags</h2>
+                <p>Once you're done, just copy-paste it straight into your project &lt;head&gt; tags!</p>
+
+                <section className="code">
+                    <span className="meta">&lt;meta</span> <span className="property">http-equiv</span>="Content-Type" <span className="property">content=</span>"text/html; charset=utf-8" <span className="meta">&gt;</span>
+                    <br />
+
+                    <span className="meta">&lt;title&gt;</span>{tags.title}<span className="meta">&lt;/title&gt;</span>
+                    <br />
+
+                    { tags.canonical !=="" ?
+                        <div>
+                            <span className="meta">&lt;link</span> <span className="property">rel</span>="canonical" <span className="property">href</span>="{tags.canonical}"&gt;
+                            <br />
+                        </div>
+                        : null
+                    }
+
+                    <span className="meta">&lt;meta</span> <span className="property">name</span>="viewport" <span className="property">content=</span>"width=device-width, initial-scale=1, maximum-scale=1"&gt;
+                    <br />
+
+                    <span className="meta">&lt;meta</span> <span className="property">name</span>="keywords" <span className="property">content=</span>"{tags.keywords}" <span className="meta">&gt;</span>
+                    <br />
+
+                    <span className="meta">&lt;meta</span> <span className="property">name</span>="description" <span className="property">content=</span>"{tags.desc}"<span className="meta">&gt;</span>
+                    <br />
+
+                    { tags.fb ==true ?
+                        <div>
+                            <span className="comment">&lt;!--FACEBOOK--&gt;</span>
+                            <br />
+                            <span className="meta">&lt;meta</span> <span className="property">property</span>="og:title" <span className="property">content=</span>"{tags.socialTitle}" <span className="meta">&gt;</span>
+                            <br />
+                            <span className="meta">&lt;meta</span> <span className="property">property</span>="og:site_name" <span className="property">content=</span>"{tags.socialName}"<span className="meta">&gt;</span>
+                            <br />
+                            <span className="meta">&lt;meta</span> <span className="property">property</span>="og:url" <span className="property">content=</span>"{tags.canonical}" <span className="meta">&gt;</span>
+                            <br />
+                            <span className="meta">&lt;meta</span> <span className="property">property</span>="og:description" <span className="property">content=</span>"{tags.desc}" <span className="meta">&gt;</span>
+                            <br />
+                            <span className="meta">&lt;meta</span> <span className="property">property</span>="og:image" <span className="property">content=</span>"{tags.socialImage}" <span className="meta">&gt;</span>
+                            <br />
+                            <span className="meta">&lt;meta</span> <span className="property">property</span>="fb:app_id" <span className="property">content=</span>"{tags.FacebookAppID}" <span className="meta">&gt;</span>
+                            <br />
+                            <span className="meta">&lt;meta</span> <span className="property">property</span>="og:type" <span className="property">content=</span>"website" <span className="meta">&gt;</span>
+                            <br />
+                            <span className="meta">&lt;meta</span> <span className="property">property</span>="og:locale" <span className="property">content=</span>"{tags.socialLocale}" <span className="meta">&gt;</span>
+                        </div>
+                        : null
+                    }
+
+                    { tags.twitter ==true ?
+                        <div>
+                            <span className="comment">&lt;!--TWITTER--&gt;</span>
+                            <br />
+                            <span className="meta">&lt;meta</span> <span className="property">property</span>="twitter:card" <span className="property">content=</span>"summary" <span className="meta">&gt;</span>
+                            <br />
+                            <span className="meta">&lt;meta</span> <span className="property">property</span>="twitter:title" <span className="property">content=</span>"{tags.twitterTitle}" <span className="meta">&gt;</span>
+                            <br />
+                            <span className="meta">&lt;meta</span> <span className="property">property</span>="twitter:description" <span className="property">content=</span>"{tags.twitterDescription}" <span className="meta">&gt;</span>
+                            <br />
+                            <span className="meta">&lt;meta</span> <span className="property">property</span>="twitter:creator" <span className="property">content=</span>"{tags.twitterSite}" <span className="meta">&gt;</span>
+                            <br />
+                            <span className="meta">&lt;meta</span> <span className="property">property</span>="twitter:url" <span className="property">content=</span>"{tags.canonical}" <span className="meta">&gt;</span>
+                            <br />
+                            <span className="meta">&lt;meta</span> <span className="property">property</span>="twitter:image" <span className="property">content=</span>"{tags.twitterImage}" <span className="meta">&gt;</span>
+                            <br />
+                            <span className="meta">&lt;meta</span> <span className="property">property</span>="twitter:image:alt" <span className="property">content=</span>"{tags.twitterImageAlt}" <span className="meta">&gt;</span>
+                        </div>
+                        : null
+                    }
+
+                    { tags.googlePlus ==true ?
+                        <div>
+                            <span className="comment">&lt;!--GOOGLE+--&gt;</span>
+                            <br />
+                            <span className="meta">&lt;link</span> <span className="property">rel</span>="author" <span className="property">href</span>="{tags.googlePlusProfile}"<span className="meta">&gt;</span>
+                            <br /> 
+                            <span className="meta">&lt;link</span> <span className="property">rel</span>="publisher" <span className="property">href</span>="{tags.googlePlusPageProfile}"<span className="meta">&gt;</span>
+                        </div>
+                    :null
+                    }
+                    
+                    
+                </section>
             </div>    
         )
     }
