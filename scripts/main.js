@@ -87,14 +87,22 @@ var GroovyInputs = React.createClass({
                 <textarea valueLink={linkState('tags.desc')} placeholder="A short description of your site (max recommended 200 chars)"/>
                 <span className="helper">It's important to give your site a good description. This will be displayed in search engine results, as well as Social sharing.</span>
                 
-                <input type="checkbox" checkedLink={linkState('tags.fb')}/>
-                <span className="helper">Facebook</span>
+                <div className="social">
+                    <label className="facebook">
+                        <input type="checkbox" checkedLink={linkState('tags.fb')}/>
+                        Facebook
+                    </label>
 
-                <input type="checkbox" checkedLink={linkState('tags.twitter')}/>
-                <span className="helper">Twitter</span>
+                    <label className="twitter">
+                        <input type="checkbox" checkedLink={linkState('tags.twitter')}/>
+                        Twitter
+                    </label>
 
-                <input type="checkbox" checkedLink={linkState('tags.googlePlus')}/>
-                <span className="helper">Google+</span>
+                    <label className="google">
+                        <input type="checkbox" checkedLink={linkState('tags.googlePlus')}/>
+                        Google+
+                    </label>
+                </div>
 
                 <h2>Let's get Social!</h2>
                 <p>Groovy Meta supports major social platforms, simply check the ones you want to include tags for and fill them in.</p>

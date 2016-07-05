@@ -25,10 +25,32 @@
   padding: 5px 10px;
   box-sizing: border-box;
 }
+.body .groovy-inputs input[type=checkbox] {
+  position: absolute;
+  left: -100vw;
+}
 .body .groovy-inputs span.helper {
-  margin-bottom: 1em;
+  box-sizing: border-box;
+  margin: 0.5em 0 1em 0;
+  padding: 0 1em;
   color: #f0e5c8;
-  text-shadow: 2px 2px 1px #73311e;
+  text-shadow: 2px 1px 1px #3e180d;
+}
+.body .groovy-inputs .social {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+.body .groovy-inputs .social label {
+  background-color: #73311e;
+  border: 5px solid #f0e5c8;
+  color: #f0e5c8;
+  box-shadow: 2px 0px 10px #555;
+  padding: 0.5em 1em;
+  border-radius: 10px;
+  font-family: Thirsty;
 }
 @font-face {
   font-family: Thirsty;
@@ -39,6 +61,10 @@
   font-family: Moderna;
   font-style: normal;
   src: url("./fonts/moderna.ttf");
+}
+footer {
+  clear: both;
+  text-align: center;
 }
 header {
   display: -webkit-box;
@@ -53,8 +79,6 @@ header .groovy-title h1 {
   -webkit-transform: rotate(-15deg);
           transform: rotate(-15deg);
   line-height: 1;
-  color: #d46828;
-  text-shadow: 2px 4px 0 #73311e, 4px 0px 0px #f0e5c8, 2px -2px 0 #f0e5c8;
 }
 header .groovy-title h1 span {
   display: block;
@@ -74,9 +98,13 @@ h3 {
 }
 h1 {
   font-size: 6rem;
+  color: #d46828;
+  text-shadow: 2px 4px 0 #73311e, 4px 0px 0px #f0e5c8, 2px -2px 0 #f0e5c8;
 }
 h2 {
   font-size: 3rem;
+  color: #f0e5c8;
+  text-shadow: 2px 4px 0 #73311e, 4px 0px 0px #c0371f, 2px -2px 0 #f0e5c8;
 }
 h3 {
   font-size: 2rem;
@@ -86,7 +114,7 @@ span {
   font-family: Moderna;
 }
 span.helper {
-  font-size: 0.8em;
+  font-size: 0.9em;
 }
 .code {
   font-family: Consolas;
