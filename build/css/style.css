@@ -1,3 +1,35 @@
+.body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background: url("./img/noise.png") repeat;
+}
+.body .groovy-inputs,
+.body .groovy-outputs {
+  -ms-flex-preferred-size: 50%;
+      flex-basis: 50%;
+  padding: 2vw;
+  box-sizing: border-box;
+}
+.body .groovy-inputs input,
+.body .groovy-inputs textarea,
+.body .groovy-inputs span.helper {
+  display: block;
+  width: 100%;
+}
+.body .groovy-inputs input,
+.body .groovy-inputs textarea {
+  background-color: #f0e5c8;
+  border: 3px solid #73311e;
+  border-radius: 10px;
+  padding: 5px 10px;
+  box-sizing: border-box;
+}
+.body .groovy-inputs span.helper {
+  margin-bottom: 1em;
+  color: #f0e5c8;
+  text-shadow: 2px 2px 1px #73311e;
+}
 @font-face {
   font-family: Thirsty;
   font-style: normal;
@@ -7,10 +39,6 @@
   font-family: Moderna;
   font-style: normal;
   src: url("./fonts/moderna.ttf");
-}
-footer {
-  clear: both;
-  text-align: center;
 }
 header {
   display: -webkit-box;
@@ -25,24 +53,19 @@ header .groovy-title h1 {
   -webkit-transform: rotate(-15deg);
           transform: rotate(-15deg);
   line-height: 1;
+  color: #d46828;
+  text-shadow: 2px 4px 0 #73311e, 4px 0px 0px #f0e5c8, 2px -2px 0 #f0e5c8;
 }
 header .groovy-title h1 span {
   display: block;
   font-size: 1.8rem;
+  color: #dea935;
+  text-shadow: 2px 2px 2px #73311e;
 }
 header .groovy-desc {
   -ms-flex-item-align: center;
       align-self: center;
   padding: 5%;
-}
-input,
-textarea,
-span.helper {
-  display: block;
-  width: 100%;
-}
-span.helper {
-  margin-bottom: 1em;
 }
 h1,
 h2,
@@ -77,12 +100,5 @@ body {
   padding: 0;
 }
 main {
-  box-sizing: border-box;
-}
-main .groovy-inputs,
-main .groovy-outputs {
-  width: 50%;
-  float: left;
-  padding: 1em;
   box-sizing: border-box;
 }
