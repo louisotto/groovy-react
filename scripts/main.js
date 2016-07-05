@@ -31,8 +31,10 @@ var App = React.createClass({
         return (
             <div className="groovy-meta">
                 <Header version={Version} />
-                <GroovyInputs linkState={this.linkState} tags={this.state.tags} />
-                <GroovyOutputs tags={this.state.tags}/>
+                <div className="body">
+                    <GroovyInputs linkState={this.linkState} tags={this.state.tags} />
+                    <GroovyOutputs tags={this.state.tags}/>
+                </div>
                 <Footer/>
             </div>
         )
