@@ -55,6 +55,7 @@ var Header = React.createClass({
                 </div>
                 <div className="groovy-desc">
                     <p>I built this tool purely to speed up creation of HTML metadata for websites, as well as those pesky social tags. It's already configured for best-practises from Facebook, Google and Twitter and when you're done all you need to do is copy-paste. It's your one-stop-meta-tag-shop. Oh, and it's free!</p>
+                    <p>Simply fill in your site's information on the left, and grab it from the code box on the right, when you're done. Groovy!</p>
                 </div>
             </header>            
         )
@@ -73,9 +74,8 @@ var GroovyInputs = React.createClass({
             <div className="groovy-inputs">
 
                 <h2>Fundamentals</h2>
-                <p>These tags are the most valuable, make sure they're filled out for best-usage.</p>
                 
-                <input type="text" valueLink={linkState('tags.title')} placeholder="Website Name"/>
+                <input type="text" valueLink={linkState('tags.title')} placeholder="Website Name" autoFocus/>
                 <span className="helper">The title of your website. Appears in tabs.</span>
 
                 <input type="text" valueLink={linkState('tags.canonical')} placeholder="Canonical URL"/>
@@ -196,8 +196,7 @@ var GroovyOutputs = React.createClass({
         return(
             <div className="groovy-outputs">
                 <h2>Your Meta Tags</h2>
-                <p>Once you're done, just copy-paste it straight into your project &lt;head&gt; tags!</p>
-
+                
                 <section className="code">
                     <span className="meta">&lt;meta</span> <span className="property">http-equiv</span>="Content-Type" <span className="property">content=</span>"text/html; charset=utf-8" <span className="meta">&gt;</span>
                     <br />

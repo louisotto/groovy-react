@@ -11,30 +11,40 @@
   padding: 2vw;
   box-sizing: border-box;
 }
+.body .groovy-inputs p {
+  color: #fffaf0;
+  text-shadow: 0 0 2px #3e180d;
+}
 .body .groovy-inputs input,
 .body .groovy-inputs textarea,
 .body .groovy-inputs span.helper {
   display: block;
   width: 100%;
+  box-shadow: 0 0 5px #333;
 }
 .body .groovy-inputs input,
 .body .groovy-inputs textarea {
-  background-color: #f0e5c8;
-  border: 3px solid #73311e;
-  border-radius: 10px;
-  padding: 5px 10px;
+  background-color: #3e180d;
+  border: 3px solid #dea935;
+  border-radius: 10px 10px 0 0;
+  padding: 10px;
   box-sizing: border-box;
+  font-family: Moderna;
+  color: #fff;
+  letter-spacing: 1px;
 }
 .body .groovy-inputs input[type=checkbox] {
   position: absolute;
-  left: -100vw;
+  left: -200vw;
 }
 .body .groovy-inputs span.helper {
   box-sizing: border-box;
-  margin: 0.5em 0 1em 0;
-  padding: 0 1em;
-  color: #f0e5c8;
-  text-shadow: 2px 1px 1px #3e180d;
+  margin: 0 0 1em 0;
+  padding: 1em;
+  color: #3e180d;
+  background-color: #f0e5c8;
+  border-radius: 0 0 10px 10px;
+  border: 3px solid #dea935;
 }
 .body .groovy-inputs .social {
   display: -webkit-box;
@@ -42,6 +52,7 @@
   display: flex;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+  padding: 20px 10px;
 }
 .body .groovy-inputs .social label {
   background-color: #73311e;
@@ -51,6 +62,43 @@
   padding: 0.5em 1em;
   border-radius: 10px;
   font-family: Thirsty;
+  -webkit-transition: background 0.2s ease, box-shadow 0.1s ease;
+  transition: background 0.2s ease, box-shadow 0.1s ease;
+}
+.body .groovy-inputs .social label:active {
+  box-shadow: none;
+}
+.body .groovy-inputs .social .facebook:hover {
+  background-color: #3b5998;
+}
+.body .groovy-inputs .social .twitter:hover {
+  background-color: #4099ff;
+}
+.body .groovy-inputs .social .google:hover {
+  background-color: #dc4e41;
+}
+.body .groovy-outputs .code {
+  background-color: #3e180d;
+  padding: 10px;
+  border-radius: 10px;
+  border: 5px solid #f0e5c8;
+  box-shadow: 0 0 5px #333;
+  color: #f0e5c8;
+  font-size: 18px;
+  line-height: 1.2;
+}
+.body .groovy-outputs .code .meta {
+  color: #cd5c5c;
+}
+.body .groovy-outputs .code .property {
+  color: #9acd32;
+  font-weight: bold;
+}
+.body .groovy-outputs .code .value {
+  color: #ff0;
+}
+.body .groovy-outputs .code .comment {
+  opacity: 0.5;
 }
 @font-face {
   font-family: Thirsty;
@@ -104,7 +152,8 @@ h1 {
 h2 {
   font-size: 3rem;
   color: #f0e5c8;
-  text-shadow: 2px 4px 0 #73311e, 4px 0px 0px #c0371f, 2px -2px 0 #f0e5c8;
+  text-shadow: 2px 4px 0 #73311e, 4px 0px 0px #c0371f, 2px -2px 0 #3e180d;
+  text-align: center;
 }
 h3 {
   font-size: 2rem;

@@ -9,31 +9,42 @@
         
     .groovy-inputs
         
+        p
+            color #fffaf0
+            text-shadow 0 0 2px groovyEarth
+        
         input, textarea, span.helper
             display block
             width 100%
+            box-shadow 0 0 5px #333
         
         input, textarea
-            background-color groovyCream
-            border 3px solid groovyMaroon
-            border-radius 10px
-            padding 5px 10px
+            background-color groovyEarth
+            border 3px solid groovyYellow
+            border-radius 10px 10px 0 0
+            padding 10px
             box-sizing border-box
+            font-family Moderna
+            color white
+            letter-spacing 1px
         
         input[type=checkbox]
             position absolute
-            left -100vw
+            left -200vw
 
         span.helper
             box-sizing border-box
-            margin 0.5em 0 1em 0
-            padding 0 1em
-            color groovyCream
-            text-shadow 2px 1px 1px groovyEarth
+            margin 0 0 1em 0
+            padding 1em
+            color groovyEarth
+            background-color groovyCream
+            border-radius 0 0 10px 10px
+            border 3px solid groovyYellow
         
         .social
             display flex
             justify-content space-around
+            padding 20px 10px
             
             label
                 background-color groovyMaroon
@@ -43,4 +54,40 @@
                 padding 0.5em 1em
                 border-radius 10px
                 font-family Thirsty
-        
+                transition background .2s ease, box-shadow .1s ease
+            
+            label:active
+                box-shadow none
+            
+            .facebook:hover 
+                background-color #3B5998
+
+            .twitter:hover
+                background-color #4099ff
+            
+            .google:hover
+                background-color #dc4e41
+    
+    .groovy-outputs
+        .code
+            background-color groovyEarth
+            padding 10px
+            border-radius 10px
+            border 5px solid groovyCream
+            box-shadow 0 0 5px #333
+            color groovyCream
+            font-size 18px
+            line-height 1.2
+            
+            .meta 
+                color #CD5C5C
+
+            .property 
+                color #9ACD32
+                font-weight bold
+
+            .value
+                color #ff0
+
+            .comment 
+                opacity .5
