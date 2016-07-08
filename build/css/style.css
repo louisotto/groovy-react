@@ -15,6 +15,11 @@
   color: #fffaf0;
   text-shadow: 0 0 2px #3e180d;
 }
+.body .groovy-inputs a {
+  text-decoration: none;
+  color: #dea935;
+  text-shadow: 0;
+}
 .body .groovy-inputs input,
 .body .groovy-inputs textarea,
 .body .groovy-inputs span.helper {
@@ -36,6 +41,9 @@
 .body .groovy-inputs input[type=checkbox] {
   position: absolute;
   left: -200vw;
+}
+.body .groovy-inputs input:focus {
+  outline: none;
 }
 .body .groovy-inputs span.helper {
   box-sizing: border-box;
@@ -111,13 +119,19 @@
   src: url("./fonts/moderna.ttf");
 }
 footer {
+  background-color: #3e180d;
   clear: both;
   text-align: center;
+  padding: 2em 0;
+}
+footer p {
+  margin: 0;
 }
 header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  background: url("./img/tile2.jpg") repeat;
 }
 header .groovy-title {
   width: 40%;
