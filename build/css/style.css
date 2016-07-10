@@ -17,7 +17,7 @@
 }
 .body .groovy-inputs a {
   text-decoration: none;
-  color: #dea935;
+  color: #ffcc5e;
   text-shadow: 0;
 }
 .body .groovy-inputs input,
@@ -53,6 +53,9 @@
   background-color: #f0e5c8;
   border-radius: 0 0 10px 10px;
   border: 3px solid #dea935;
+}
+.body .groovy-inputs span.helper a {
+  color: #a77c2c;
 }
 .body .groovy-inputs .social {
   display: -webkit-box;
@@ -108,6 +111,25 @@
 .body .groovy-outputs .code .comment {
   opacity: 0.5;
 }
+.body .groovy-outputs button {
+  padding: 0.5em 1em;
+  background-color: #c0371f;
+  border: 5px solid #dea935;
+  font-family: Thirsty;
+  color: #f0e5c8;
+  border-radius: 10px;
+  font-size: 20px;
+  box-shadow: 0 0 5px #000;
+  margin-top: 1em;
+  -webkit-transition: box-shadow 0.1s ease;
+  transition: box-shadow 0.1s ease;
+}
+.body .groovy-outputs button:active {
+  box-shadow: none;
+}
+.body .groovy-outputs button:focus {
+  outline: none;
+}
 @font-face {
   font-family: Thirsty;
   font-style: normal;
@@ -123,18 +145,50 @@ footer {
   clear: both;
   text-align: center;
   padding: 2em 0;
+  box-shadow: inset 0 0 20px #000;
 }
 footer p {
-  margin: 0;
+  margin: 1em 0 0 0;
+  color: #d46828;
+}
+footer .icons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+footer a.share {
+  box-shadow: 2px 0px 10px #000;
+  padding: 0.5em 1em;
+  border-radius: 10px;
+  color: #fff;
+  font-family: Thirsty;
+  margin: 0 1em;
+  border: 5px solid #f0e5c8;
+}
+footer a {
+  color: #f0e5c8;
+  text-decoration: none;
+}
+footer .twitter {
+  background-color: #4099ff;
+}
+footer .facebook {
+  background-color: #3b5998;
 }
 header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  padding: 2em 0;
   background: url("./img/tile2.jpg") repeat;
+  box-shadow: inset 0 0 20px #000;
 }
 header .groovy-title {
-  width: 40%;
+  -ms-flex-preferred-size: 40%;
+      flex-basis: 40%;
 }
 header .groovy-title h1 {
   text-align: center;
@@ -145,13 +199,22 @@ header .groovy-title h1 {
 header .groovy-title h1 span {
   display: block;
   font-size: 1.8rem;
-  color: #dea935;
-  text-shadow: 2px 2px 2px #73311e;
+  color: #3a2e12;
+  text-shadow: none;
 }
 header .groovy-desc {
   -ms-flex-item-align: center;
       align-self: center;
-  padding: 5%;
+  padding: 10px;
+  max-width: 600px;
+  -ms-flex-preferred-size: 40%;
+      flex-basis: 40%;
+  margin: auto;
+  background: #f0e5c8;
+  border-radius: 15px;
+  border: 5px solid #c0371f;
+  box-shadow: 0 0 15px #000;
+  color: #3e180d;
 }
 h1,
 h2,
@@ -160,10 +223,11 @@ h3 {
 }
 h1 {
   font-size: 6rem;
-  color: #d46828;
-  text-shadow: 2px 4px 0 #73311e, 4px 0px 0px #f0e5c8, 2px -2px 0 #f0e5c8;
+  color: #ffd57a;
+  text-shadow: 0 0 25px #3e180d;
 }
-h2 {
+h2,
+h3 {
   font-size: 3rem;
   color: #f0e5c8;
   text-shadow: 2px 4px 0 #73311e, 4px 0px 0px #c0371f, 2px -2px 0 #3e180d;

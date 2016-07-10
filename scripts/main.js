@@ -9,6 +9,7 @@ var History = ReactRouter.History;
 var createBrowserHistory = require('history/lib/createBrowserHistory');
 
 var Catalyst = require('react-catalyst');
+var Clipboard = require('clipboard');
 
 var App = React.createClass({
 
@@ -28,6 +29,7 @@ var App = React.createClass({
 
     render : function() {
         var Version = "2.0";
+
         return (
             <div className="groovy-meta">
                 <Header version={Version} />
@@ -51,11 +53,11 @@ var Header = React.createClass({
         return(
             <header>
                 <div className="groovy-title">
-                    <h1>Groovy<span>Meta</span>Generator<span>v{this.props.version}</span></h1>
+                    <h1>Groovy<span>meta</span>Generator<span>v{this.props.version}</span></h1>
                 </div>
                 <div className="groovy-desc">
-                    <p>I built this tool purely to speed up creation of HTML metadata for websites, as well as those pesky social tags. It's already configured for best-practises from Facebook, Google and Twitter and when you're done all you need to do is copy-paste. It's your one-stop-meta-tag-shop. Oh, and it's free!</p>
-                    <p>Simply fill in your site's information on the left, and grab it from the code box on the right, when you're done. Groovy!</p>
+                    <p>Groovy Meta Generator speeds up the application of HTML metadata for websites to the max! Social tags? Got you covered, holmes. Groovy Meta's already configured for best-practises from Facebook, Google and Twitter and when you're done all you need to do is copy-paste. It's your one-stop-meta-tag-shop. Oh, and it's free!</p>
+                    <p>Simply fill in your site's information on the left, and grab it from the code box on the right, when you're done. Catch you on the flip side!</p>
                 </div>
             </header>            
         )
@@ -192,7 +194,7 @@ var GroovyOutputs = React.createClass({
     render : function() {
 
         var tags = this.props.tags;
-
+        new Clipboard('.copy');
         return(
             <div className="groovy-outputs">
                 <h2>Your Meta Tags</h2>
@@ -276,8 +278,8 @@ var GroovyOutputs = React.createClass({
                     :null
                     }
                     
-                    
                 </section>
+                <button className="copy" data-clipboard-target=".code">Copy to Clipboard</button>
             </div>    
         )
     }
@@ -289,9 +291,10 @@ var Footer = React.createClass({
         return (
 
             <footer>
+                <h2>Like it? I'd appreciate some lovin'</h2>
                 <div className="icons">
-                    <a className="tweet" href="https://twitter.com/home?status=HTML%20meta%20data%20made%20easy%20thanks%20to%20GroovyMeta!%20http://www.groovymeta.com%20@louisotto">Share on Twitter</a>
-                    <a className="facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://www.groovymeta.com">Share on Facebook</a>
+                    <a className="share twitter" href="https://twitter.com/home?status=HTML%20meta%20data%20made%20easy%20thanks%20to%20GroovyMeta!%20http://www.groovymeta.com%20@louisotto">Share on Twitter</a>
+                    <a className="share facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://www.groovymeta.com">Share on Facebook</a>
                 </div>
                 <p>Built by <a href="https://wingtip.solutions">Louis Otto</a></p>
             </footer>
