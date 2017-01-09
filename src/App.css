@@ -2,7 +2,7 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  background: url("./img/noise.png") repeat;
+  background: url("/img/noise.png") repeat;
 }
 .body .groovy-inputs,
 .body .groovy-outputs {
@@ -133,12 +133,12 @@
 @font-face {
   font-family: Thirsty;
   font-style: normal;
-  src: url("./fonts/thirstysoftblack-webfont.woff");
+  src: url("/fonts/thirstysoftblack-webfont.woff");
 }
 @font-face {
   font-family: Moderna;
   font-style: normal;
-  src: url("./fonts/moderna.ttf");
+  src: url("/fonts/moderna.ttf");
 }
 footer {
   background-color: #3e180d;
@@ -183,7 +183,7 @@ header {
   display: -ms-flexbox;
   display: flex;
   padding: 2em 0;
-  background: url("./img/pattern.jpg") repeat;
+  background: url("/img/pattern.jpg") repeat;
   box-shadow: inset 0 0 20px #000;
 }
 header .groovy-title {
@@ -224,7 +224,7 @@ h3 {
 h1 {
   font-size: 6rem;
   color: #ffd57a;
-  text-shadow: 0 0 25px #3e180d;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 h2,
 h3 {
@@ -244,10 +244,10 @@ span.helper {
   font-size: 0.9em;
 }
 .code {
-  font-family: Consolas;
+  font-family: 'Consolas', 'Courier', monotype;
 }
 .code span {
-  font-family: Consolas;
+  font-family: 'Consolas', 'Courier', monotype;
 }
 html,
 body {
