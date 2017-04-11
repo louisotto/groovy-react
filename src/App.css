@@ -1,13 +1,15 @@
 .body {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   background: url("/img/noise.png") repeat;
+}
+.body::after {
+  content: "";
+  display: block;
+  clear: both;
 }
 .body .groovy-inputs,
 .body .groovy-outputs {
-  -ms-flex-preferred-size: 50%;
-      flex-basis: 50%;
+  width: 50%;
+  float: left;
   padding: 2vw;
   box-sizing: border-box;
 }
@@ -179,16 +181,18 @@ footer .facebook {
   background-color: #3b5998;
 }
 header {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   padding: 2em 0;
   background: url("/img/pattern.jpg") repeat;
   box-shadow: inset 0 0 20px #000;
 }
+header::after {
+  content: "";
+  clear: both;
+  display: block;
+}
 header .groovy-title {
-  -ms-flex-preferred-size: 40%;
-      flex-basis: 40%;
+  width: 40%;
+  float: left;
 }
 header .groovy-title h1 {
   text-align: center;
@@ -203,13 +207,11 @@ header .groovy-title h1 span {
   text-shadow: none;
 }
 header .groovy-desc {
-  -ms-flex-item-align: center;
-      align-self: center;
   padding: 10px;
   max-width: 600px;
-  -ms-flex-preferred-size: 40%;
-      flex-basis: 40%;
-  margin: auto;
+  width: 40%;
+  float: right;
+  margin: 0 20px 0 0;
   background: #f0e5c8;
   border-radius: 15px;
   border: 5px solid #c0371f;
@@ -256,4 +258,32 @@ body {
 }
 main {
   box-sizing: border-box;
+}
+
+@media (max-width: 940px) {
+  header .groovy-title, header .groovy-desc {
+    width: 100%;
+  }
+  header .groovy-desc {
+    max-width: 100%;
+    width: calc(100% - 20px);
+    margin: 0 10px;
+    box-sizing: border-box;
+  }
+}
+
+@media (max-width: 675px) {
+  .groovy-title h1 {
+    font-size: 3.8rem;
+  }
+  .body .groovy-inputs,
+  .body .groovy-outputs {
+    width: 100%;
+  }
+}
+
+@media (max-width: 550px) {
+  h2 {
+    font-size: 2.3rem;
+  }
 }
